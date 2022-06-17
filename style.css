@@ -1,0 +1,94 @@
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 100px 400px 20px 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+h1 {
+  font-size: 36px;
+}
+li {
+  display: inline;
+}
+ul {
+  margin: 20px 30px;
+  padding: 0;
+  word-spacing: 10px;
+}
+h1 {
+  margin: 15px 10px;
+}
+form {
+  margin: -10px 15px;
+}
+section {
+  margin-top: 50px;
+}
+.container {
+  background-image: url(images/img.jpg);
+  background-position: 50%;
+}
+.cities {
+  text-align: right;
+}
+.forms {
+  text-align: right;
+}
+.city {
+  text-align: left;
+  padding-left: 0;
+}
+.datetime {
+  margin-top: 0;
+  line-height: 2px;
+}
+.maindegrees {
+  font-size: 55px;
+  margin-left: 5px;
+}
+.currentweather {
+  font-size: 24px;
+  line-height: 10px;
+  margin-left: 5px;
+}
+.emoji {
+  font-size: 80px;
+}
+.card-title {
+  font-size: 20px;
+  font-weight: 300;
+}
+.card-body {
+  font-size: 20px;
+  font-weight: 300;
+}
+.author {
+  text-align: center;
+  font-size: 12px;
+  margin: 10px 2px 0px 10px;
+  color: white;
+}
+.card-body {
+  text-align: center;
+  background-color: rgba(12, 21, 103, 0.3);
+}
+.degreeicons {
+  font-size: 18px;
+  position: relative;
+  top: -25px;
+}
+.sunicon {
+  font-size: 90px;
+  margin-left: 20px;
+}
+.card {
+  background: none;
+  color: white;
+}
+.parameters {
+  text-align: right;
+  font-size: 16px;
+  display: grid;
+  position: relative;
+  top: -100px;
+}
