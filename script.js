@@ -7,23 +7,6 @@ function changeCity(event) {
 let formSearch = document.querySelector("#cityButtons");
 formSearch.addEventListener("submit", changeCity);
 
-function convertF(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
-}
-function convertC(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", convertF);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", convertC);
-
 let datetime = document.querySelector(".datetime");
 let days = [
   "Sunday",
@@ -82,7 +65,32 @@ function getTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", convertF);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", convertC);
+
+function convertF(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+}
+
+function convertC(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 function clickSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#mainSearch").value;

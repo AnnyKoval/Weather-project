@@ -92,3 +92,11 @@ section {
   position: relative;
   top: -100px;
 }
+
+.maindegrees .active {
+  cursor:default;
+  color: black;
+  text-decoration: none;
+}
+.maindegrees .active:hover {
+  text-decoration: none;
