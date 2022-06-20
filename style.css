@@ -21,9 +21,7 @@ h1 {
 form {
   margin: -10px 15px;
 }
-section {
-  margin-top: 50px;
-}
+
 .container {
   background-image: url(images/img.jpg);
   background-position: 50%;
@@ -52,37 +50,19 @@ section {
   margin-left: 5px;
 }
 
-.card-title {
-  font-size: 20px;
-  font-weight: 300;
-}
-.card-body {
-  font-size: 20px;
-  font-weight: 300;
-}
 .author {
   text-align: center;
   font-size: 12px;
   margin: 10px 2px 0px 10px;
   color: white;
 }
-.card-body {
-  text-align: center;
-  background-color: rgba(12, 21, 103, 0.3);
-}
+
 .degreeicons {
   font-size: 18px;
   position: relative;
   top: -25px;
 }
-.sunicon {
-  font-size: 90px;
-  margin-left: 20px;
-}
-.card {
-  background: none;
-  color: white;
-}
+
 .parameters {
   text-align: right;
   font-size: 16px;
@@ -98,4 +78,36 @@ section {
 }
 .maindegrees .active:hover {
   text-decoration: none;
+}
+.image-color {
+  color: aquamarine;
+  background: #7c515a;
+  border-radius: 5px;
+}
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.weather-forecast-date {
+  font-size: 26px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 36px;
+}
+.col-2 {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0 10px 0 10px;
+  color: white;
+  background: #9b5d60;
+  opacity: 0.7;
+  font-weight: bold;
 }
