@@ -33,7 +33,7 @@ function formatDate(timestamp) {
   return `Last updated: ${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -68,6 +68,13 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(getTemperature);
 }
+
+function getForecast(coordinates) {
+  let apiKey = "ed0417bf8fecd4ab27286ed64422cb0b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function getTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   let showTemperature = document.querySelector("#temperature");
@@ -96,6 +103,8 @@ function getTemperature(response) {
   );
   icon.setAttribute("alt", response.data.weather[0].description);
   celsiusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
@@ -146,4 +155,3 @@ let currentLocation = document.querySelector("#currentButton");
 currentLocation.addEventListener("click", getCurrentLocation);
 
 searchCity("Kyiv");
-displayForecast();
