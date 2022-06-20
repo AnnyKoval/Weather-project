@@ -24,10 +24,9 @@ fahrenheitLink.addEventListener("click", convertF);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertC);
 
-let now = new Date();
 let datetime = document.querySelector(".datetime");
 let days = [
-  "sunday",
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
@@ -35,16 +34,21 @@ let days = [
   "Friday",
   "Saturday",
 ];
-let day = days[now.getDay()];
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let day = days[now.getDay()];
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `Last updated: ${day} ${hours}:${minutes}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-datetime.innerHTML = `${day} ${hours}:${minutes}`;
 function searchCity(city) {
   let apiKey = "ed0417bf8fecd4ab27286ed64422cb0b";
   let units = "metric";
@@ -63,13 +67,15 @@ function getTemperature(response) {
 
   let showWind = document.querySelector("#wind");
   let wind = response.data.wind.speed;
-  showWind.innerHTML = `Wind: ${wind} m/s`;
+  showWind.innerHTML = `Wind: ${wind} Km/H`;
 
   let showPrecipitation = document.querySelector("#precipitation");
   let precipitation = response.data.clouds.all;
   showPrecipitation.innerHTML = `Precipitation: ${precipitation}%`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  let showDateTime = document.querySelector("datetime");
+  datetime.innerHTML = formatDate(response.data.dt * 1000);
 }
 function clickSubmit(event) {
   event.preventDefault();
