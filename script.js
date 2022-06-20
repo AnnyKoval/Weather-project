@@ -99,7 +99,7 @@ function getTemperature(response) {
 
   let showWind = document.querySelector("#wind");
   let wind = response.data.wind.speed;
-  showWind.innerHTML = `Wind: ${wind} Km/H`;
+  showWind.innerHTML = `Wind: ${wind} m/s`;
 
   let showPrecipitation = document.querySelector("#precipitation");
   let precipitation = response.data.clouds.all;
@@ -119,29 +119,6 @@ function getTemperature(response) {
   getForecast(response.data.coord);
 }
 
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", convertF);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", convertC);
-
-function convertF(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
-}
-
-function convertC(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
 function clickSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#mainSearch").value;
