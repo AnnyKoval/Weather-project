@@ -76,6 +76,12 @@ function getTemperature(response) {
     response.data.weather[0].main;
   let showDateTime = document.querySelector("datetime");
   datetime.innerHTML = formatDate(response.data.dt * 1000);
+  let icon = document.querySelector("#iconWeather");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 function clickSubmit(event) {
   event.preventDefault();
