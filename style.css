@@ -51,9 +51,7 @@ section {
   line-height: 10px;
   margin-left: 5px;
 }
-.emoji {
-  font-size: 80px;
-}
+
 .card-title {
   font-size: 20px;
   font-weight: 300;
@@ -94,9 +92,10 @@ section {
 }
 
 .maindegrees .active {
-  cursor:default;
+  cursor: default;
   color: black;
   text-decoration: none;
 }
 .maindegrees .active:hover {
   text-decoration: none;
+}
