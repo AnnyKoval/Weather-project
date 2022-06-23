@@ -22,40 +22,31 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-6 city">
           <h1 id="city"></h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <p class="datetime"></p>
-        </div>
-        <div class="col-6 forms">
-          <form class="search" id="cityButtons">
-            <input
-              type="search"
-              placeholder="Type a city..."
-              class="rounded-pill"
-              id="mainSearch"
-              autofocus="on"
-              autocomplete="off"
-            />
-            <input
-              type="submit"
-              value="Search"
-              id="searchSubmit"
-              class="rounded-pill"
-            />
-            <input
-              type="submit"
-              value="Current"
-              id="currentButton"
-              class="rounded-pill"
-            />
-          </form>
-        </div>
-      </div>
+      <p class="datetime"></p>
+
+        <form class="search" id="cityButtons">
+          <input
+            type="search"
+            placeholder="Type a city..."
+            class="rounded-pill"
+            id="mainSearch"
+            autofocus="on"
+            autocomplete="off"
+          />
+          <input
+            type="submit"
+            value="Search"
+            id="searchSubmit"
+            class="rounded-pill"
+          />
+          <input
+            type="submit"
+            value="Current"
+            id="currentButton"
+            class="rounded-pill"
+          />
+        </form>
       <div class="maindegrees">
         <span class="mainDegree" id="temperature"></span>
         <span class="degreeicons" id="celsius">°C </span
@@ -95,6 +86,7 @@
         by Anna Koval
       </p>
     </div>
+</div>
     <script src="script.js"></script>
   </body>
 </html>
