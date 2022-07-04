@@ -37,6 +37,7 @@ form {
 .datetime {
   margin-top: 0;
   line-height: 2px;
+  margin-bottom: 25px;
 }
 .maindegrees {
   font-size: 55px;
